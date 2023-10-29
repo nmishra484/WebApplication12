@@ -18,7 +18,7 @@ namespace WebApplication12.Models
         public string password { get; set; }
 
         [Required]
-        [DisplayName("UserName")]
+        [DisplayName("User Name")]
         public string  name { get; set; }
     }
 }

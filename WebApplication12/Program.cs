@@ -1,9 +1,19 @@
+using System.Data.SqlClient;
+using System.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IDbConnection>((conn) =>
+{
+    var configuration = conn.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("mycon");
+    return new SqlConnection(connectionString);
+});
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
