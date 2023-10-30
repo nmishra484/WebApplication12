@@ -16,6 +16,11 @@ namespace WebApplication12.Repository
         {
             _configuration = configuration;
         }
+
+        public DAL()
+        {
+        }
+
         public SqlConnection con = new SqlConnection("Data Source = DESKTOP - B7N39K8\\SQLEXPRESS; Initial Catalog = test_mvc; Integrated Security = True");
 
         public List<UserRegModel> GetDataList()
