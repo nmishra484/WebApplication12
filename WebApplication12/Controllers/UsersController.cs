@@ -92,6 +92,5 @@ namespace WebApplication12.Controllers
                 return View();
             }
         }
-
     }
 }
